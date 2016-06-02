@@ -13,28 +13,45 @@ describe('Specs',function () {
   describe('Rows', function () {
 
     it('Should only accept a non-negative number', function () {
-      expect(expectGrid()).to.throw();
-      expect(expectGrid({})).to.throw();
-      expect(expectGrid(-1)).to.not.throw();
-      expect(expectGrid(1)).to.not.throw();
+      expect(createGrid.bind(null)).to.throw();
+      expect(createGrid.bind(null,{})).to.throw();
+      expect(createGrid.bind(null,-1)).to.throw();
+      expect(createGrid.bind(null,1)).to.not.throw();
     });
 
     it('Should return an HTMLElement', function () {
-      expect(createGrid(1)).to.be.an.instanceof(Function);
+      expect(createGrid(1)).to.be.an.instanceof(HTMLElement);
     });
 
     it('Should return the same number of rows as provided', function () {
-      expect(createGrid(10)).to.be.an.instanceof(Function);
+      expect(createGrid(1).childElementCount).to.equal(1);
+      expect(createGrid(10).childElementCount).to.equal(10);
     });
 
   });
 
-  describe('Columns', function () {
+  // describe('Columns', function () {
 
-  });
+  //   it('If no column value is provided, columns should equal the number of rows', function () {
 
-  describe('Attributes', function () {
+  //   });
 
-  });
+  //   it('If a column value is provided, that should be the number of columns returned', function () {
+
+  //   });
+
+  // });
+
+  // describe('Attributes', function () {
+
+  //   it('If no column value is provided, all attributes should get applied to each grid element', function () {
+
+  //   });
+
+  //   it('If a column value is provided, that should be the number of columns returned, along with the attributes applied', function () {
+
+  //   });
+
+  // });
 
 });
