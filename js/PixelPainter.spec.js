@@ -30,17 +30,18 @@ describe('Specs',function () {
 
   });
 
-  // describe('Columns', function () {
+  describe('Columns', function () {
 
-  //   it('If no column value is provided, columns should equal the number of rows', function () {
+    it('If no column value is provided, columns should equal the number of rows', function () {
+      expect(createGrid(1).children[0].childElementCount).to.equal(1);
+      expect(createGrid(10).children[0].childElementCount).to.equal(10);
+    });
 
-  //   });
+    it('If a column value is provided, that should be the number of columns returned', function () {
 
-  //   it('If a column value is provided, that should be the number of columns returned', function () {
+    });
 
-  //   });
-
-  // });
+  });
 
   // describe('Attributes', function () {
 
