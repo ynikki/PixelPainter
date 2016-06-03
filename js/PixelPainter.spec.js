@@ -38,7 +38,8 @@ describe('Specs',function () {
     });
 
     it('If a column value is provided, that should be the number of columns returned', function () {
-
+      expect(createGrid(1,10).children[0].childElementCount).to.equal(10);
+      expect(createGrid(10,5).children[0].childElementCount).to.equal(5);
     });
 
   });
