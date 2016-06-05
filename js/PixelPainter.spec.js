@@ -44,16 +44,18 @@ describe('Specs',function () {
 
   });
 
-  // describe('Attributes', function () {
+  describe('Attributes', function () {
 
-  //   it('If no column value is provided, all attributes should get applied to each grid element', function () {
+    it('If no column value is provided, all attributes should get applied to each grid element', function () {
+      expect(createGrid(1,{}).children[0].childElementCount).to.equal(1);
+      expect(createGrid(10,{class:'grid'}).children[0].childElementCount).to.equal(10);
+      expect(createGrid(10,{class: 'grid', style: 'background-color: black'}).children[0].childElementCount).to.equal(10);
+    });
 
-  //   });
+    it('If a column value is provided, that should be the number of columns returned, along with the attributes applied', function () {
+      expect(createGrid(10,5,{class: 'grid'}).children[0].childElementCount).to.equal(5);
+    });
 
-  //   it('If a column value is provided, that should be the number of columns returned, along with the attributes applied', function () {
-
-  //   });
-
-  // });
+  });
 
 });
