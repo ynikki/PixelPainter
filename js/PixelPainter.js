@@ -27,63 +27,59 @@ function createGrid(rows,columns,attributes) {
           row.appendChild(column);
           
       for(var key in attributes){
-        column.setAttribute(key,attributes[key]);
+        if(typeof attributes === 'object'){
+          column.setAttribute(key,attributes[key].length);
+        }
       }
-      // keys = Object.keys(attributes);
-      // for(var k = 0; k < keys.length; k++){
-      //       column.setAttribute(keys[k],attributes[keys]);
-       // }
+    }
+  }
+ return containElem;
+}
+
+  function addAttributes(element, attributes){
+    if(typeof attributes === 'object'){
+      Object.keys(attributes).forEach(function(attribute){
+        element[attribute] = attributes[attribute];
+      });
+    }else{
+      throw new TypeError('attributes must be an Object!!!');
     }
   }
 
- return containElem;
+ var colors = [
+      '#663399',
+      '#9acd32',
+      '#f5f5f5',
+      '#ee82ee',
+      '#40e0d0',
+      '#ff6347',
+ ];
 
+function PixelPainter(width, height){
+  var ppCanvas = document.getElementById('pixelPainter');
+      ppCanvas.id = 'pp-canvas';
+      ppCanvas.appendChild(createGrid);
 }
 
-//   function addAttributes(element, attributes){
-//     if(typeof attributes === 'object'){
-//       Object.keys(attributes).forEach(function(attribute){
-//         element[attribute] = attributes[attribute];
-//       });
-//     }else{
-//       throw new TypeError('attributes must be an Object!!!');
-//     }
-//   }
+var buttonOne = document.querySelector('button');
+var eraseButton = {
+  style: 'width: 90px; height: 30px; background-color: #dda0dd',
+  onclick: eraseButtonOne,
+};
 
-//  var colors = [
-//       '#663399',
-//       '#9acd32',
-//       '#f5f5f5',
-//       '#ee82ee',
-//       '#40e0d0',
-//       '#ff6347',
-//  ];
+function eraseButtonOne(event){
+}
 
-// function PixelPainter(width, height){
-//   var ppCanvas = document.getElementById('pixelPainter');
-//       ppCanvas.id = 'pp-canvas';
-//       ppCanvas.appendChild(createGrid);
-// }
-
-// var buttonOne = document.querySelector('button');
-// var eraseButton = {
-//   style: 'width: 90px; height: 30px; background-color: #dda0dd',
-//   onclick: eraseButtonOne,
-// };
-
-// function eraseButtonOne(event){
-// }
-
-// addAttributes(buttonOne,eraseButton);
+addAttributes(buttonOne,eraseButton);
   
-// var buttons = document.querySelectorAll('button');
-// var clearButton = buttons[1];
-// var clearButtonOpt = {
-//   style: 'width: 90px; height: 30px; background-color: #7fffd4',
-//   onclick: clearButtonTwo,
-// };
-// function clearButtonTwo(event){
-//   event.target.onclick = 'clear';
-// }
+var buttons = document.querySelectorAll('button');
+var clearButton = buttons[1];
+var clearButtonOpt = {
+  style: 'width: 90px; height: 30px; background-color: #7fffd4',
+  onclick: clearButtonTwo,
+};
+function clearButtonTwo(event){
+  event.target.onclick = 'clear';
+}
 
-// addAttributes(clearButton,clearButtonOpt);
+addAttributes(clearButton,clearButtonOpt);

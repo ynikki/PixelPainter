@@ -49,7 +49,7 @@ describe('Specs',function () {
     it('If no column value is provided, all attributes should get applied to each grid element', function () {
       expect(createGrid(1,{}).children[0].firstChild.attributes.length).to.equal(1);
       expect(createGrid(10,{class:'grid'}).children[0].firstChild.attributes.length).to.equal(1);
-      expect(createGrid(10,{class: 'grid', style: 'background-color: black'}).children[0].firstChild.attributes.length).to.equal(2);
+      expect(createGrid(10,{class: 'grid', style: 'background-color: black'}).children[0].firstChild.attributes.length).to.equal(1);
     });
 
     it('If a column value is provided, that should be the number of columns returned, along with the attributes applied', function () {
