@@ -9,20 +9,26 @@ h1{
   -webkit-text-fill-color: transparent;
 }
 
+div.containElem{
+  border-style: solid;
+  border-color: #696969;
+
+}
+
 div.column{
   width: 40px;
   height: 40px;
   border-style: solid;
-  border-color: #000000;
-  display: inline-block;
+  border-color: #696969;
+  display: table-column;
 }
 
 div.row{
   width: 40px;
   height: 40px;
   border-style: solid;
-  border-color: #000000;
-  display: inline-block;
+  border-color: #696969;
+  display: table-row;
 }
 
 button{
