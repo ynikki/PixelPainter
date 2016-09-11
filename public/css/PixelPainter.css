@@ -9,26 +9,38 @@ h1{
   -webkit-text-fill-color: transparent;
 }
 
-div.containElem{
+.column{
+  width: 10px;
+  height: 10px;
   border-style: solid;
   border-color: #696969;
-
 }
 
-div.column{
-  width: 40px;
-  height: 40px;
+.containElem{
+  width: 400px;
+  height: 400px;
   border-style: solid;
   border-color: #696969;
-  display: table-column;
 }
 
-div.row{
+.painter{
+  width:600px;
+  height:600px;
+}
+
+.pallete{
   width: 40px;
   height: 40px;
-  border-style: solid;
-  border-color: #696969;
-  display: table-row;
+}
+
+.canvas{
+  width: 20px;
+  height: 20px;
+}
+
+.pixels{
+  width: 20px;
+  height: 20px;
 }
 
 button{
@@ -38,5 +50,11 @@ button{
   letter-spacing: .3em;
   margin-right: 20px;
   margin-left: 15px;
+  margin-top: 40px;
+  outline: none;
 }
 
+.pixelPainter{
+  width: 300px;
+  height: 300px;
+}

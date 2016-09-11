@@ -36,6 +36,12 @@ function createGrid(rows,columns,attributes) {
  return containElem;
 }
 
+function PixelPainter(width, height){
+  var ppCanvas = document.getElementById('pixelPainter');
+      ppCanvas.id = 'pp-canvas';
+      ppCanvas.appendChild(createGrid);
+}
+
   function addAttributes(element, attributes){
     if(typeof attributes === 'object'){
       Object.keys(attributes).forEach(function(attribute){
@@ -55,11 +61,6 @@ function createGrid(rows,columns,attributes) {
       '#ff6347',
  ];
 
-function PixelPainter(width, height){
-  var ppCanvas = document.getElementById('pixelPainter');
-      ppCanvas.id = 'pp-canvas';
-      ppCanvas.appendChild(createGrid);
-}
 
 var buttonOne = document.querySelector('button');
 var eraseButton = {
