@@ -8,7 +8,7 @@ class Pallet extends React.Component {
       return (
         <div 
           key={ index }
-          styles={{ backgroundColor: color }}
+          style={{ backgroundColor: color }}
           className="pixels"
         />
       )
