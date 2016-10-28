@@ -21,7 +21,6 @@ const mapStateToProps = (reduxState, props) => {
 class PixelPainterApp extends React.Component {
   constructor (props) {
     super(props);
-    console.log(this.props);
     this.setColor = this.props.setColor.bind(this);
     this.selectColor = this.props.selectColor.bind(this);
   }
@@ -32,12 +31,15 @@ class PixelPainterApp extends React.Component {
         className = "painter"
       >
         <Pixel 
-          onClick={ this.selectColor }
+          // handleClick={() => this.selectColor(color, index)}
+          // {...color}
         />
         <Pallet 
           colors = { this.props.pallet.colors }
         />
-        <Canvas />
+        <Canvas 
+          colors = { this.props.canvas }
+        />
       </div>
     );
   }

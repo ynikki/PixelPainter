@@ -21,7 +21,7 @@ const reducer = (state=initialState, action) => {
   switch(action.type){
     case "CLEAR_CANVAS":
     return newState;
-    case "SET_CANVAS":
+    case "SET_COLOR":
       const targetColor = action.data.color;
       if (targetColor < 0 || targetColor >=state.length) {
         return state;

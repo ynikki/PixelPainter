@@ -4,7 +4,6 @@ import Pixel from './Pixel';
 
 class Pallet extends React.Component {
   render () {
-    console.log(this.props);
     const palletepixels = this.props.colors.map((color, index) => {
       return (
         <Pixel 
